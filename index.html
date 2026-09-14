@@ -42,7 +42,8 @@
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="text-gray-600 hover:text-primary font-medium transition">Home</a>
-                    <a href="#smartphones" class="text-gray-600 hover:text-primary font-medium transition">Smartphones</a>
+                    <a href="#featured" class="text-gray-600 hover:text-primary font-medium transition">Featured</a>
+                    <a href="#smartphones" class="text-gray-600 hover:text-primary font-medium transition">All Smartphones</a>
                     <a href="#contact" class="text-gray-600 hover:text-primary font-medium transition">Contact</a>
                 </div>
             </div>
@@ -59,38 +60,114 @@
                 <p class="text-lg text-gray-300 mb-8">
                     Browse our collection of premium smartphones. Find your perfect match and order instantly via WhatsApp.
                 </p>
-                <a href="#smartphones" class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-500 transition shadow-lg">
-                    View Phones
-                </a>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="#featured" class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-500 transition shadow-lg">
+                        View Featured
+                    </a>
+                    <a href="#smartphones" class="bg-gray-800 text-gray-200 border border-gray-700 font-semibold px-6 py-3 rounded-full hover:bg-gray-700 transition">
+                        Browse All
+                    </a>
+                </div>
             </div>
             <div class="md:w-1/2 flex justify-center">
-                <!-- Dedicated Hero Cover Photo -->
                 <img src="assets/cover.avif" alt="iTradehub Store Front" class="rounded-2xl shadow-2xl transform hover:scale-105 transition duration-500 max-h-96 w-full object-cover border border-gray-700">
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section id="smartphones" class="py-16">
+    <!-- Featured Section (iPhone 17 & 18 Lineup Only) -->
+    <section id="featured" class="py-16 bg-white border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">Featured Smartphones</h2>
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Next-Gen Flagships</span>
+                <h2 class="text-3xl font-bold text-gray-900 mt-3">Featured Lineup (iPhone 17 & 18)</h2>
                 <div class="h-1 w-20 bg-primary mx-auto mt-4 rounded"></div>
-                <p class="text-gray-500 mt-4">Check specs, prices, and chat with us to buy!</p>
+                <p class="text-gray-500 mt-4">Discover Apple's latest cutting-edge technology</p>
             </div>
 
-            <div id="product-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Phone cards render here -->
+            <div id="featured-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- iPhone 17 and 18 cards render here -->
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contact" class="bg-gray-900 text-white py-10 text-center">
-        <div class="max-w-7xl mx-auto px-4">
-            <h3 class="text-2xl font-bold mb-4">iTradehub Mobile Store</h3>
-            <p class="text-gray-400 mb-6">Your trusted partner for the latest tech.</p>
-            <p class="text-gray-500 text-sm">&copy; 2026 iTradehub. All rights reserved.</p>
+    <!-- All Smartphones Section with Dynamic Filter Bar -->
+    <section id="smartphones" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900">All Smartphones</h2>
+                <div class="h-1 w-20 bg-primary mx-auto mt-4 rounded"></div>
+                <p class="text-gray-500 mt-4">Browse our entire inventory or filter by status</p>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="flex justify-center items-center flex-wrap gap-3 mb-12">
+                <button onclick="filterCategory('all')" id="btn-all" class="filter-btn px-6 py-2.5 rounded-full font-semibold text-sm transition-all shadow-sm bg-blue-600 text-white">
+                    All Devices
+                </button>
+                <button onclick="filterCategory('pta')" id="btn-pta" class="filter-btn px-6 py-2.5 rounded-full font-semibold text-sm transition-all shadow-sm bg-white text-gray-700 hover:bg-gray-100 border border-gray-300">
+                    PTA Approved
+                </button>
+                <button onclick="filterCategory('non-pta')" id="btn-non-pta" class="filter-btn px-6 py-2.5 rounded-full font-semibold text-sm transition-all shadow-sm bg-white text-gray-700 hover:bg-gray-100 border border-gray-300">
+                    NON-PTA / JV
+                </button>
+            </div>
+
+            <div id="product-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Filtered phone cards render here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Footer / Contact Section -->
+    <footer id="contact" class="bg-gray-900 text-white py-12 text-center md:text-left">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
+                
+                <!-- Brand Info -->
+                <div class="md:w-1/2 md:pr-10">
+                    <h3 class="text-3xl font-bold mb-4 tracking-wide text-primary">iTradehub.pk <i class="fa-solid fa-mobile-screen text-2xl"></i></h3>
+                    <ul class="text-gray-300 space-y-3 leading-relaxed">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-circle-check text-blue-500 mt-1.5 mr-3"></i>
+                            <span>Your trusted destination for iPhone sales/purchase, repairs and accessories.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-circle-check text-blue-500 mt-1.5 mr-3"></i>
+                            <span>Quality service, unbeatable prices, and customer satisfaction guaranteed! Let us help you stay connected!</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-6 inline-flex items-center bg-gray-800 border border-gray-700 rounded-lg px-4 py-2">
+                        <i class="fa-solid fa-truck-fast text-green-400 mr-3 text-lg"></i> 
+                        <span class="font-medium text-gray-200">Cash on delivery available in Lahore.</span>
+                    </div>
+                </div>
+
+                <!-- Contact Links -->
+                <div class="md:w-1/3 md:text-right flex flex-col items-center md:items-end">
+                    <h3 class="text-xl font-semibold mb-5 border-b border-gray-700 pb-2 w-full text-center md:text-right">Get in Touch</h3>
+                    
+                    <!-- Phone Link -->
+                    <a href="tel:03393336999" class="text-2xl font-bold text-white hover:text-primary transition flex items-center mb-6">
+                        <i class="fa-solid fa-phone-volume text-primary mr-3"></i> 0339-3336999
+                    </a>
+                    
+                    <!-- WhatsApp Button -->
+                    <a href="https://wa.me/923393336999" target="_blank" class="w-full md:w-auto text-center bg-whatsapp hover:bg-green-600 text-white font-semibold py-4 px-8 rounded-xl shadow-lg transition-transform transform hover:-translate-y-1">
+                        <i class="fa-brands fa-whatsapp text-2xl mr-2 align-middle"></i> <span class="align-middle text-lg">Chat with us</span>
+                    </a>
+                </div>
+                
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+                <p>&copy; 2026 iTradehub.pk. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook text-xl"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram text-xl"></i></a>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -99,71 +176,35 @@
         const BUSINESS_WHATSAPP_NUMBER = "923393336999"; 
 
         const phones = [
-            {
-                id: 1,
-                name: "iPhone 13 (128GB)",
-                brand: "Apple",
-                price: "Rs. 135,000",
-                image: "images/phones/iphone13_jv_128.jpeg",
-                specs: [
-                    "128 GB Storage",
-                    "JV SIM Supported",
-                    "6.1-inch Super Retina XDR",
-                    "A15 Bionic Chip"
-                ]
-            },
-            {
-                id: 2,
-                name: "iPhone 11 Pro (256GB)",
-                brand: "Apple",
-                price: "Rs. 115,000",
-                image: "images/phones/iphone11pro_npta_256.jpeg",
-                specs: [
-                    "256 GB Storage",
-                    "Non-PTA Approved",
-                    "Triple 12MP Camera System",
-                    "5.8-inch Super Retina XDR"
-                ]
-            },
-            {
-                id: 3,
-                name: "iPhone XS Max (64GB)",
-                brand: "Apple",
-                price: "Rs. 78,000",
-                image: "images/phones/iphone_xsmax_jv_64.jpeg",
-                specs: [
-                    "64 GB Storage",
-                    "JV SIM Supported",
-                    "6.5-inch Super Retina OLED",
-                    "Dual 12MP Cameras"
-                ]
-            },
-            {
-                id: 4,
-                name: "iPhone SE (64GB)",
-                brand: "Apple",
-                price: "Rs. 58,000",
-                image: "images/phones/iphone_se_pta_64.jpeg",
-                specs: [
-                    "64 GB Storage",
-                    "Official PTA Approved",
-                    "4.7-inch Retina HD Display",
-                    "Touch ID Home Button"
-                ]
-            },
-            {
-                id: 5,
-                name: "iPhone 8 Plus (64GB)",
-                brand: "Apple",
-                price: "Rs. 48,000",
-                image: "images/phones/iphone8plus_jv_64.jpeg",
-                specs: [
-                    "64 GB Storage",
-                    "JV SIM Supported",
-                    "5.5-inch Retina HD Display",
-                    "Dual 12MP Cameras"
-                ]
-            }
+            { id: 1, name: "iPhone 16 Pro (256GB)", brand: "Apple", price: "Rs. 179,000", image: "Pictures/iphone_16_pro_256gb_jv.jpg", specs: ["NON-PTA (JV)", "Battery Health: 90%", "Condition: 10/10", "3 Days Money Back Warranty"] },
+            { id: 2, name: "iPhone 7 (128GB)", brand: "Apple", price: "Rs. 16,500", image: "Pictures/iphone_7_128gb_pta.jpg", specs: ["PTA Approved", "Battery Health: 100%", "Condition: 9/10", "3 Days Money Back Warranty"] },
+            { id: 3, name: "iPhone SE-2 (64GB)", brand: "Apple", price: "Rs. 27,500", image: "Pictures/iphone_se2_64gb_pta_backbreak.jpg", specs: ["PTA Approved", "Back-Break", "Battery Health: 85%", "Condition: 9/10", "3 Days Money Back Warranty"] },
+            { id: 4, name: "iPhone XS (64GB)", brand: "Apple", price: "Rs. 32,500", image: "Pictures/iphone_xs_64gb_nonpta.jpg", specs: ["NON-PTA", "Battery Health: 83%", "Condition: 9/10", "3 Days Money Back Warranty"] },
+            { id: 5, name: "iPhone 12 Pro (256GB)", brand: "Apple", price: "Rs. 115,000", image: "Pictures/iphone_12_pro_256gb_pta.jpg", specs: ["PTA Approved", "Battery Health: 97%", "Condition: 10/10", "3 Days Money Back Warranty"] },
+            { id: 6, name: "iPhone 13 (128GB)", brand: "Apple", price: "Rs. 109,000", image: "Pictures/iphone_13_128gb_pta.jpg", specs: ["PTA Approved", "Battery Health: 87%", "Condition: 9/10", "3 Days Money Back Warranty"] },
+            { id: 7, name: "iPhone 11 Pro Max (256GB)", brand: "Apple", price: "Rs. 67,000", image: "Pictures/iphone_11_pro_max_256gb_jv.jpg", specs: ["NON-PTA (JV)", "Battery Health: 94%", "Condition: 10/10", "3 Days Money Back Warranty"] },
+            { id: 8, name: "iPhone 13 Pro (256GB)", brand: "Apple", price: "Rs. 112,000", image: "Pictures/iphone_13_pro_256gb_nonpta.jpg", specs: ["NON-PTA", "Battery Health: 94%", "Condition: 10/10", "3 Days Money Back Warranty"] },
+            { id: 9, name: "iPhone 14 (128GB)", brand: "Apple", price: "Rs. 77,000", image: "Pictures/iphone_14_128gb_jv.jpg", specs: ["NON-PTA (JV)", "Battery Health: 88-94%", "Condition: 10/10", "3 Days Money Back Warranty"] },
+            { id: 10, name: "iPhone 13 Pro Max (128GB)", brand: "Apple", price: "Rs. 117,000", image: "Pictures/iphone_13_pro_max_128gb_jv.jpg", specs: ["NON-PTA (JV)", "Battery Health: Mix%", "Condition: 9/10", "3 Days Money Back Warranty"] },
+            { id: 11, name: "iPhone 13 (128GB)", brand: "Apple", price: "Rs. 67,000", image: "Pictures/iphone_13_128gb_jv_88.jpg", specs: ["NON-PTA (JV)", "Battery Health: 88-87%", "Condition: 10/10", "3 Days Money Back Warranty"] },
+            { id: 12, name: "iPhone XS Max (64GB)", brand: "Apple", price: "Rs. 54,000", image: "Pictures/iphone_xs_max_64gb_pta.jpg", specs: ["PTA Approved", "Battery Health: 88%", "Condition: 10/10", "3 Days Money Back Warranty"] },
+            { id: 13, name: "iPhone 16 (128GB)", brand: "Apple", price: "Rs. 137,000", image: "Pictures/iphone_16_128gb_jv.jpg", specs: ["NON-PTA (JV)", "Battery Health: 90%", "Condition: 10/10", "3 Days Money Back Warranty"] },
+            { id: 14, name: "iPhone 12 Pro Max (128GB)", brand: "Apple", price: "Rs. 70,000", image: "Pictures/iphone_12_pro_max_128gb.jpg", specs: ["PTA Approved", "Battery Health: 90%", "Condition: 7/10", "3 Days Money Back Warranty"] },
+            { id: 15, name: "iPhone 13 Pro Max (128GB)", brand: "Apple", price: "Rs. 127,000", image: "Pictures/iphone_13_pro_max_128gb_nonpta.jpg", specs: ["NON-PTA", "Battery Health: 92%", "Condition: 10/10", "3 Days Money Back Warranty"] },
+            { id: 16, name: "iPhone 11 (64GB)", brand: "Apple", price: "Rs. 39,000", image: "Pictures/iphone_11_64gb_jv.jpg", specs: ["NON-PTA (JV)", "Battery Health: Mix%", "Condition: 10/10", "3 Days Money Back Warranty"] },
+            { id: 17, name: "iPhone 11 Pro (256GB)", brand: "Apple", price: "Rs. 54,000", image: "Pictures/iphone_11_pro_256gb_nonpta.jpg", specs: ["NON-PTA", "Battery Health: 89%", "Condition: 10/10", "3 Days Money Back Warranty"] },
+            { id: 18, name: "iPhone 8 Plus (64GB)", brand: "Apple", price: "Rs. 27,000", image: "Pictures/iphone_8_plus_64gb_pta.jpg", specs: ["PTA (JV)", "Battery Health: 100%", "Condition: 9/10", "3 Days Money Back Warranty"] },
+            { id: 19, name: "iPhone SE 2nd Gen (64GB)", brand: "Apple", price: "Rs. 30,500", image: "Pictures/iphone_se2_64gb_pta_mix.jpg", specs: ["PTA Approved", "Battery Health: Mix%", "Condition: 9/10", "3 Days Money Back Warranty"] },
+            { id: 20, name: "iPhone XS Max (64GB)", brand: "Apple", price: "Rs. 37,500", image: "Pictures/iphone_xs_max_64gb_jv.jpg", specs: ["NON-PTA (JV)", "Battery Health: 80/88/74%", "Condition: 9/10", "3 Days Money Back Warranty"] },
+            { id: 21, name: "iPhone 13 (128GB)", brand: "Apple", price: "Rs. 65,000", image: "Pictures/iphone_13_128gb_jv_mix.jpg", specs: ["NON-PTA (JV)", "Battery Health: Mix%", "Condition: 9/10", "3 Days Money Back Warranty"] },
+            { id: 22, name: "iPhone XS Max (256GB)", brand: "Apple", price: "Rs. 39,000", image: "Pictures/iphone_xs_max_256gb.jpg", specs: ["PTA Approved", "Battery Health: 100% (Changed)", "Condition: 9/10", "3 Days Money Back Warranty"] },
+            { id: 23, name: "iPhone 11 Pro Max (64GB)", brand: "Apple", price: "Rs. 58,000", image: "Pictures/iphone_11_pro_max_64gb_jv.jpg", specs: ["NON-PTA (JV)", "Battery Health: 91%", "Condition: 10/10", "3 Days Money Back Warranty"] },
+            { id: 24, name: "iPhone 17 (128GB)", brand: "Apple", price: "Rs. 245,000", image: "Pictures/iphone_17_128gb.jpg", specs: ["Official PTA Approved", "A19 Bionic Chip", "Battery Health: 100%", "3 Days Money Back Warranty"] },
+            { id: 25, name: "iPhone 17 Air (256GB)", brand: "Apple", price: "Rs. 285,000", image: "Pictures/iphone_17_air_256gb.jpg", specs: ["Official PTA Approved", "Ultra-Slim Design", "Battery Health: 100%", "3 Days Money Back Warranty"] },
+            { id: 26, name: "iPhone 17 Pro (256GB)", brand: "Apple", price: "Rs. 335,000", image: "Pictures/iphone_17_pro_256gb.jpg", specs: ["NON-PTA (JV)", "A19 Pro Chip", "Battery Health: 100%", "3 Days Money Back Warranty"] },
+            { id: 27, name: "iPhone 17 Pro Max (512GB)", brand: "Apple", price: "Rs. 410,000", image: "Pictures/iphone_17_pro_max_512gb.jpg", specs: ["Official PTA Approved", "Triple 48MP Camera", "Battery Health: 100%", "3 Days Money Back Warranty"] },
+            { id: 29, name: "iPhone 18 Pro (256GB)", brand: "Apple", price: "Rs. 395,000", image: "Pictures/iphone_18_pro_256gb.jpg", specs: ["Pre-Order / Import", "A20 Pro Chip", "Under-Display Face ID", "3 Days Money Back Warranty"] },
+            { id: 30, name: "iPhone 18 Pro Max (512GB)", brand: "Apple", price: "Rs. 475,000", image: "Pictures/iphone_18_pro_max_512gb.jpg", specs: ["Pre-Order / Import", "A20 Pro Chip", "Variable Aperture Camera", "3 Days Money Back Warranty"] }
         ];
 
         function orderOnWhatsApp(phoneName, phonePrice) {
@@ -172,9 +213,7 @@
             window.open(whatsappUrl, '_blank');
         }
 
-        const container = document.getElementById('product-container');
-
-        phones.forEach(phone => {
+        function createCardHTML(phone) {
             const specsHtml = phone.specs.map(spec => `
                 <li class="flex items-start mb-2">
                     <i class="fa-solid fa-check text-green-500 mt-1 mr-2 text-sm"></i>
@@ -182,17 +221,17 @@
                 </li>
             `).join('');
 
-            const card = `
+            return `
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 product-card flex flex-col">
                     <div class="h-64 overflow-hidden relative bg-gray-100 flex justify-center items-center">
                         <span class="absolute top-4 left-4 bg-gray-900 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide z-10">${phone.brand}</span>
-                        <img src="${phone.image}" alt="${phone.name}" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/500x500?text=Phone+Image'">
+                        <img src="${phone.image}" alt="${phone.name}" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/500x500?text=Image+Missing'">
                     </div>
                     
                     <div class="p-6 flex-grow flex flex-col">
                         <div class="flex justify-between items-start mb-4">
                             <h3 class="text-xl font-bold text-gray-900 leading-tight">${phone.name}</h3>
-                            <span class="text-lg font-extrabold text-primary">${phone.price}</span>
+                            <span class="text-lg font-extrabold text-primary whitespace-nowrap ml-2">${phone.price}</span>
                         </div>
                         
                         <ul class="mb-6 flex-grow">
@@ -208,8 +247,48 @@
                     </div>
                 </div>
             `;
-            container.innerHTML += card;
+        }
+
+        const featuredContainer = document.getElementById('featured-container');
+        const productContainer = document.getElementById('product-container');
+
+        // Render Featured Section
+        const featuredPhones = phones.filter(p => p.name.includes("iPhone 17") || p.name.includes("iPhone 18"));
+        featuredPhones.forEach(phone => {
+            featuredContainer.innerHTML += createCardHTML(phone);
         });
+
+        // Function to filter catalogue
+        function filterCategory(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.className = "filter-btn px-6 py-2.5 rounded-full font-semibold text-sm transition-all shadow-sm bg-white text-gray-700 hover:bg-gray-100 border border-gray-300";
+            });
+
+            const activeBtn = document.getElementById(`btn-${category}`);
+            if (activeBtn) {
+                activeBtn.className = "filter-btn px-6 py-2.5 rounded-full font-semibold text-sm transition-all shadow-sm bg-blue-600 text-white";
+            }
+
+            let filteredList = phones;
+            if (category === 'pta') {
+                filteredList = phones.filter(p => 
+                    p.specs.some(s => s.toLowerCase().includes('pta approved')) && 
+                    !p.specs.some(s => s.toLowerCase().includes('non-pta'))
+                );
+            } else if (category === 'non-pta') {
+                filteredList = phones.filter(p => 
+                    p.specs.some(s => s.toLowerCase().includes('non-pta') || s.toLowerCase().includes('jv'))
+                );
+            }
+
+            productContainer.innerHTML = '';
+            filteredList.forEach(phone => {
+                productContainer.innerHTML += createCardHTML(phone);
+            });
+        }
+
+        filterCategory('all');
     </script>
 </body>
 </html>
