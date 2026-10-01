@@ -30,8 +30,8 @@ const phones = [
 
 
 const accessories = [
-    { id: 101, name: "Apple 20W USB-C Power Adapter", brand: "Apple", price: "Rs. 5,500", image: "https://via.placeholder.com/300x300?text=Charger" },
-    { id: 102, name: "AirPods Pro (2nd Gen)", brand: "Apple", price: "Rs. 65,000", image: "https://via.placeholder.com/300x300?text=AirPods" },
-    { id: 103, name: "Premium Silicone Case (All Models)", brand: "Accessory", price: "Rs. 1,500", image: "https://via.placeholder.com/300x300?text=Case" },
-    { id: 104, name: "9D Glass Screen Protector", brand: "Accessory", price: "Rs. 800", image: "https://via.placeholder.com/300x300?text=Protector" }
+    { id: 101, name: "Apple 20W USB-C Power Adapter", brand: "Apple", price: "Rs. 5,500", image: "accessories_imgs/20W_usbc_charger.jpg" },
+    { id: 102, name: "AirPods Pro (2nd Gen)", brand: "Apple", price: "Rs. 65,000", image: "accessories_imgs/airpods_pro2.jpg" },
+    { id: 103, name: "Premium Silicone Case (All Models)", brand: "Accessory", price: "Rs. 1,500", image: "accessories_imgs/back_covers.jpg" },
+    { id: 104, name: "9D Glass Screen Protector", brand: "Accessory", price: "Rs. 800", image: "accessories_imgs/glass_protec.jpg" }
 ];
